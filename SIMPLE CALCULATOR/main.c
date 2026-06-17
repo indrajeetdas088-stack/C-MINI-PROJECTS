@@ -14,15 +14,13 @@ printf("----WELCOME TO MY SIMPLE CALCULATOR----\n");
 printf("\nEnter your 1st number: "); 
 scanf("%lf", &num1);
 
-printf("Enter the operator (+, -, *, /, ^): ");
+printf("Enter the operator (+, -, *, /, ^, s): ");
 scanf(" %c", &operator);
 
-printf("Enter your 2nd number: ");
-scanf("%lf", &num2);
-
-
-
-
+if(operator != 's'){
+    printf("Enter your second number: ");
+    scanf("%lf", &num2);
+}
 
 switch(operator) {
     case '+':
@@ -50,14 +48,20 @@ switch(operator) {
     result = pow(num1, num2);
     printf("Result: %.2lf", result);
     break;
-
-    default:
-    printf("Please enter a valid operator (+, -, *, /, ^)\n");
+    case 's':
+    if(num1 < 0){
+        printf("Error: Cannot calculate the square root a negative number\n");
+    }
+    else{
+        result = sqrt(num1);
+            printf("Result: %.2lf\n", result);
+    }
     break;
+    
+    default:
+    printf("Please enter a valid operator (+, -, *, /, ^, s)\n");
+    break;
+
 }
-
-
-
-
     return 0;
 }
