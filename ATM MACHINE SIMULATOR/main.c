@@ -7,6 +7,7 @@ int choice = 0;
 float amount = 0.0f;
 int pin = 0;
 
+do{
 printf("WELCOME TO SBI ATM\n");
 printf("PLEASE ENTER YOUR PIN: ");
 scanf("%d", &pin);
@@ -63,7 +64,11 @@ else{
 }
 else{
     printf("Invalid PIN. Access Denied.");
-}
+}}while (choice != 4);
+
+
+
+
 
     return 0;
 }
